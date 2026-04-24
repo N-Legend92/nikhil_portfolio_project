@@ -1,12 +1,10 @@
 # Portfolio Part 1: Component Brainstorming
 
-- **Name**: <!-- TODO: fill with first and last name (e.g., Brutus Buckeye) then delete this comment -->
-- **Dot Number**: <!-- TODO: fill with OSU dot number (e.g., buckeye.17) then delete this comment -->
-- **Due Date**: <!-- TODO: fill with due date and time (e.g., 10/17 @ 3:10 PM EST) then delete this comment -->
+- **Name**: Nikhil Gunda
+- **Dot Number**: gunda.16
+- **Due Date**: 04/23 @ 1:50 PM EST
 
 ## Assignment Overview
-
-<!-- TODO: read the assignment overview then delete this comment -->
 
 The overall goal of the portfolio project is to have you design and implement
 your own OSU component. There are no limits to what you choose to design and
@@ -29,8 +27,6 @@ implement.
 
 ## Assignment Checklist
 
-<!-- TODO: browse the checklist then delete this comment -->
-
 To be sure you have completed everything on this assignment, we have littered
 this document with TODO comments. You can browse all of them in VSCode by
 opening the TODOs window from the sidebar. The icon looks like a tree and will
@@ -52,8 +48,6 @@ to the tree diagram (you may remove this one as well):
 
 ## Assignment Learning Objectives
 
-<!-- TODO: read the assignment learning objectives then delete this comment -->
-
 Without learning objectives, there really is no clear reason why a particular
 assessment or activity exists. Therefore, to be completely transparent, here is
 what we're hoping you will learn through this particular aspect of the portfolio
@@ -66,8 +60,6 @@ project. Specifically, students should be able to:
    discipline
 
 ## Assignment Rubric: 10 Points
-
-<!-- TODO: read the assignment rubric then delete this comment -->
 
 Again, to be completely transparent, most of the portfolio project, except the
 final submission, is designed as a formative assessment. Formative assessments
@@ -106,23 +98,19 @@ Below is further rationale/explanation for the rubric items above:
 > brainstorming. Plus it helps us get to know you better! Feel free to share
 > images in this section.
 
-<!-- TODO: briefly talk about your interests then delete this comment.
-Also, protip: you can preview what your response looks like by hitting
-the magnifying glass icon in the upper-right corner or pressing CTRL+K and
-then V. This kind of button combination is called a chord, for whatever
-reason -->
+***Answer: As a ECE major, my career goals are probably bit different from the others taking
+this course. I want to work with hardware rather than software.
+This could be semiconductor testing, working with FPGA, embedded systems design,
+and more. I also like drumming, video games, playing table tennis, and reading
+in my free time.***
 
 ## Assignment
-
-<!-- TODO: read the assignment section then delete this comment -->
 
 As previously stated, you are tasked with brainstorming 3 possible components.
 To aid you in this process, we have provided [some example components][example-components]
 that may help you in your brainstorming. All of these components were made at
 some point by one of your peers, so you should feel confident that you can
 accomplish any of them.
-
-<!-- TODO: browse the list of possible projects then delete this comment -->
 
 There is no requirement that you use any of the components listed above.
 If you want to model something else, go for it! Very common early object
@@ -142,8 +130,6 @@ list-like components that have different ways of manipulating the data. Think
 about different ways you might allow a client to manipulate your component.
 
 ### Example Component
-
-<!-- TODO: review this example component then delete this comment -->
 
 To help you brainstorm a few components, we've provided an example below of a
 component you already know well: NaturalNumber. We highly recommend that you
@@ -211,68 +197,98 @@ will likely refine your design to make your implementation easier to use.
 
 > Please use this section to share your designs.
 
-- Component Design #1: <!-- TODO: give component a name then delete this comment -->
+- Component Design #1: `DeckOfCards`
   - **Description**:
-    - <!-- TODO: describe your component then delete this comment -->
+    - The purpose of this components is to model a deck of playing cards. The kernel methods
+    wil involve basic card "operations" and the secondary methods will support more
+    advanced "operations" that are done with decks of cards.
   - **Kernel Methods**:
-    - <!-- TODO: list kernel methods then delete this comment -->
+    - `void addToDeck(Card c)`: adds a card to the deck
+    - `Card draw()`: removes and returns a card from the deck
+    - `int size()`: returns the number of cards currently in the deck
+    - `boolean isEmpty()` checks if the deck contains cards and returns true or false
   - **Secondary Methods**:
-    - <!-- TODO: list secondary methods then delete this comment -->
+    - `void shuffle()`: randomly changes the order of the cards
+    - `void cut()`: cuts the size of the deck in half by removing half the cards
+    - `boolean contains(Card c)`: checks if a card is inside the deck
+    - `Card reveal()`: shows the top card of the deck but doesn't remove it
   - **Additional Considerations** (*note*: "I don't know" is an acceptable
     answer for each of the following questions):
     - Would this component be mutable? Answer and explain:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - Yes, almost all of the methods mutate the component in some way.
     - Would this component rely on any internal classes (e.g., `Map.Pair`)?
       Answer and explain:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - Yes, there would probably be a Card class of some sort to ensure every
+      element has a value and suit
     - Would this component need any enums or constants (e.g.,
       `Program.Instruction`)? Answer and explain:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - There would be an enum for the suit of the card to ensure there are
+      only 4 options.
     - Can you implement your secondary methods using your kernel methods?
       Answer, explain, and give at least one example:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - Yes, `contains` can be implemented by drawing every single card using `draw()`
+      and then replacing it using `addToDeck`
 
-- Component Design #2: <!-- TODO: give component a name then delete this comment -->
+- Component Design #2: `ClipBoard`
   - **Description**:
-    - <!-- TODO: describe your component then delete this comment -->
+    - The purpose of this components is to model a clipboard that stores a history
+    copied items. The kerenel handles the basic "operations" of copy and paste
+    while the secondary methods provide organizaitonal functionality.
   - **Kernel Methods**:
-    - <!-- TODO: list kernel methods then delete this comment -->
+    - `void copy(String text)`: adds text to the top of the clipboard history
+    - `String paste()`: removes and returns the most recently copied entry
+    - `int size()`: returns the number of entries currently stored
+    - `boolean isEmpty()`: returns whether the clipboard has no entries
   - **Secondary Methods**:
-    - <!-- TODO: list secondary methods then delete this comment -->
+    - `boolean contains(String text)`: returns true if the given text exists in the clipboard list
+    - `void pin(int index)`: moves the entry at the given index to the top so it won't get buried
+    - `String oldest()`: returns the oldest entry in the history
+    - `void removeDuplicates()`: keeps most recent copy of any repeated entries and removes the rest
   - **Additional Considerations** (*note*: "I don't know" is an acceptable
     answer for each of the following questions):
     - Would this component be mutable? Answer and explain:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - Yes almost all methods mutate the component in someway and it inherits `Standard`
     - Would this component rely on any internal classes (e.g., `Map.Pair`)?
       Answer and explain:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - No it only uses `String`.
     - Would this component need any enums or constants (e.g.,
       `Program.Instruction`)? Answer and explain:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - No, there is no reason for any enums or constants because it is basically just a list
     - Can you implement your secondary methods using your kernel methods?
       Answer, explain, and give at least one example:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - Yes, `contains` can be created by calling `paste` to check against the target
+      and then using `copy` to put it back in the list.
 
-- Component Design #3: <!-- TODO: give component a name then delete this comment -->
+- Component Design #3: `VendingMachine`
   - **Description**:
-    - <!-- TODO: describe your component then delete this comment -->
+    - The purpose of this component is to model a vending machine that stores
+    items and dispenses them after payment. The kernel handles the basic operations of
+    adding items and payment, while the secondary methods provide additional functionality.
   - **Kernel Methods**:
-    - <!-- TODO: list kernel methods then delete this comment -->
+    - `void addMoney(int amount)`: adds amount to the current amount
+    - `int getAmount()`: returns the current amount
+    - `void addItem(String name, int price)`: stocks a new item to the vending machine
+    - `void dispense(String name)` dispenses the item
+    - `void resetAmount()`: sets the current amount back to 0
   - **Secondary Methods**:
-    - <!-- TODO: list secondary methods then delete this comment -->
+    - `int returnChange()`: returns the current amount and resets it to 0
+    - `String cheapest()`: returns the name of the lowest priced item
+    - `boolean canAfford(String name)`: returns if you can buy item with current amount
   - **Additional Considerations** (*note*: "I don't know" is an acceptable
     answer for each of the following questions):
     - Would this component be mutable? Answer and explain:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - Yes, methods like addMoney and addItem mutate the component and it also
+      inherits `Standard`
     - Would this component rely on any internal classes (e.g., `Map.Pair`)?
       Answer and explain:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - Maybe an Item class that contains a name and price pair for every item
     - Would this component need any enums or constants (e.g.,
       `Program.Instruction`)? Answer and explain:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - Maybe a constant for the maxium capacity of the vending machine
     - Can you implement your secondary methods using your kernel methods?
       Answer, explain, and give at least one example:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - You save the current balance with `getAmount()`, then reset it to 0 with
+      `resetAmount()`
 
 ## Post-Assignment
 
@@ -281,7 +297,6 @@ completed the assignment.
 
 ### Changelog
 
-<!-- TODO: create CHANGELOG then delete this comment -->
 
 At the end of every assignment, you should update the
 [CHANGELOG.md](../../CHANGELOG.md) file found in the root of the project folder.
@@ -320,7 +335,6 @@ of development.
 
 ### Submission
 
-<!-- TODO: read the submission instructions then delete this comment -->
 
 If you have completed the assignment using this template, we recommend that
 you convert it to a PDF before submission. If you're not sure how, check out
@@ -334,7 +348,6 @@ you have to submit any PDFs.
 
 ### Peer Review
 
-<!-- TODO: review the peer review guidelines then delete this comment -->
 
 Following the completion of this assignment, you will be assigned three
 students' component brainstorming assignments for review. Your job during the
