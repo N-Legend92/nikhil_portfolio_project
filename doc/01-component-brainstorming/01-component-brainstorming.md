@@ -233,7 +233,7 @@ will likely refine your design to make your implementation easier to use.
   - **Description**:
     - The purpose of this components is to model a clipboard that stores a history
     copied items. The kerenel handles the basic "operations" of copy and paste
-    while the secondary methods provide organizaitonal functionality.
+    while the secondary methods provide organizaitonal functionality. 
   - **Kernel Methods**:
     - `void copy(String text)`: adds text to the top of the clipboard history
     - `String paste()`: removes and returns the most recently copied entry
