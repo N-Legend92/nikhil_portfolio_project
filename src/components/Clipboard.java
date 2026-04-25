@@ -1,3 +1,5 @@
+package components;
+
 /**
  * {@code ClipboardKernel} enhanced with secondary methods.
  */
