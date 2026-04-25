@@ -10,6 +10,12 @@ the following form: YYYY.0M.0D.
 
 ### Added
 
+- Designed kernel implementation for Clipboard component
+
+### Updated
+
+- Changed design to include the actual implementation of the kernel methods
+- for the clipboard component. As for overall design, nothing was really modified.
 - Designed abstract class for Clipboard component
 
 ### Updated
