@@ -1,3 +1,5 @@
+package components;
+
 /**
  * Layered implementations of secondary methods for {@code Clipboard}.
  */

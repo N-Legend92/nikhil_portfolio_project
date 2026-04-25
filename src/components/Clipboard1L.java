@@ -1,3 +1,5 @@
+package components;
+
 import components.sequence.Sequence;
 import components.sequence.Sequence1L;
 
@@ -78,7 +80,8 @@ public class Clipboard1L extends ClipboardSecondary {
     public final void transferFrom(Clipboard source) {
         assert source != null : "Violation of: source is not null";
         assert source != this : "Violation of: source is not this";
-        assert source instanceof Clipboard1L : "Violation of: source is of dynamic type Clipboard1L";
+        assert source instanceof Clipboard1L : ""
+                + "Violation of: source is of dynamic type Clipboard1L";
         Clipboard1L localSource = (Clipboard1L) source;
         this.list = localSource.list;
         localSource.createNewRep();
