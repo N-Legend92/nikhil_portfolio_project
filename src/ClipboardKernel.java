@@ -34,6 +34,17 @@ public interface ClipboardKernel extends Standard<Clipboard> {
     void clearEntry();
 
     /**
+     * Removes the entry at the given index from the clipboard.
+     *
+     * @param index
+     *            the index of the entry to remove
+     * @requires index is greater than or equal to 0 and less than this.size()
+     * @updates this
+     * @ensures the entry at the given index has been removed from this
+     */
+    void clearEntry(int index);
+
+    /**
      * Returns the entry at the given index without removing it.
      *
      * @param index
