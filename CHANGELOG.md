@@ -10,6 +10,15 @@ the following form: YYYY.0M.0D.
 
 ### Added
 
+- Designed abstract class for Clipboard component
+
+### Updated
+
+- Changed design to include...
+- Implemented all of the secondary methods toString(), equals(),
+- contains(String text), oldest(), pin(int index), and removeDuplicates().
+- Modified the interface to include a new kernel method, `clearEntry(int index)`
+- This made implement some of the secondary methods easier
 - Designed kernel and enhanced interfaces for Clipboard component
 
 ### Updated
