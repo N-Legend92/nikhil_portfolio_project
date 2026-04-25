@@ -9,6 +9,7 @@ public abstract class ClipboardSecondary implements Clipboard {
      * Common methods (from Object) -------------------------------------------
      */
 
+    // CHECKSTYLE: ALLOW THIS METHOD TO BE OVERRIDDEN
     @Override
     public String toString() {
         String result = "[";
@@ -23,6 +24,7 @@ public abstract class ClipboardSecondary implements Clipboard {
         return result;
     }
 
+    // CHECKSTYLE: ALLOW THIS METHOD TO BE OVERRIDDEN
     @Override
     public boolean equals(Object obj) {
         boolean eq = (this == obj);
@@ -41,6 +43,7 @@ public abstract class ClipboardSecondary implements Clipboard {
      * Other non-kernel methods -----------------------------------------------
      */
 
+    // CHECKSTYLE: ALLOW THIS METHOD TO BE OVERRIDDEN
     @Override
     public boolean contains(String text) {
         boolean found = false;
@@ -53,12 +56,14 @@ public abstract class ClipboardSecondary implements Clipboard {
         return found;
     }
 
+    // CHECKSTYLE: ALLOW THIS METHOD TO BE OVERRIDDEN
     @Override
     public String oldest() {
         assert !this.isEmpty() : "Violation of: this is not empty";
         return this.entry(this.size() - 1);
     }
 
+    // CHECKSTYLE: ALLOW THIS METHOD TO BE OVERRIDDEN
     @Override
     public void pin(int index) {
         assert 0 <= index
@@ -68,6 +73,7 @@ public abstract class ClipboardSecondary implements Clipboard {
         this.copy(pinned);
     }
 
+    // CHECKSTYLE: ALLOW THIS METHOD TO BE OVERRIDDEN
     @Override
     public void removeDuplicates() {
         int i = 0;
